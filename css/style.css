@@ -129,13 +129,15 @@ header .right-nav ul li::before {
   color: var(--very-dark-grayish-blue);
   user-select: none;
 }
-.app .container main button:hover {
-    transform: scale(0.95);
-    background-color: var(--grayish-orange-key-shadow);
-  }
+
 @media(min-width: 768px){
 .app .container main button {
     cursor: pointer;
+  }
+  .app .container main button:hover {
+    transform: scale(0.95);
+    background-color: var(--grayish-orange-key-shadow);
+  }
 }
 .app .container main button.reset,
 button.equal {
