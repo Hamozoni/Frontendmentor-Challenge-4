@@ -1,0 +1,174 @@
+:root {
+  /* ### Theme 1 */
+  /* #### Backgrounds */
+  --main-background: hsl(222, 26%, 31%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+  /* #### Keys */
+  --key-background: hsl(225, 21%, 49%);
+  --key-shadow: hsl(224, 28%, 35%);
+  --Red-key-background-toggle: hsl(6, 63%, 50%);
+  --dark-red-key-shadow: hsl(6, 70%, 34%);
+  --light-grayish-orange-key-background: hsl(30, 25%, 89%);
+  --grayish-orange-key-shadow: hsl(28, 16%, 65%);
+  /* #### Text */
+  --very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+  --output-color: hsl(0, 0%, 100%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--main-background);
+}
+.container {
+  width: 450px;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.app .container header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  color: var(--output-color);
+  transition-delay: 0s;
+}
+.app .container header .right-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .right-nav h3 {
+  font-size: 10px;
+}
+header .right-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 52px;
+  height: 20px;
+  border-radius: 9px;
+  padding: 3px;
+  cursor: pointer;
+  background-color: var(--keypad-background);
+}
+header .right-nav ul li {
+  position: relative;
+  list-style: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  counter-increment: inc;
+}
+header .right-nav ul li.active {
+  cursor: pointer;
+  background-color: var(--Red-key-background-toggle);
+}
+header .right-nav ul li.active:hover {
+  background-color: var(--dark-red-key-shadow);
+}
+header .right-nav ul li::before {
+  content: counter(inc);
+  position: absolute;
+  top: -20px;
+  left: 3px;
+  width: -6px;
+  font-size: 11px;
+}
+.app .container .output {
+  max-width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  line-height: 70px;
+  color: var(--output-color);
+  font-size: 35px;
+  font-weight: 700;
+  background-color: var(--screen-background);
+  padding: 25px;
+  text-align: end;
+  border-radius: 7px;
+  user-select: none;
+  overflow: hidden;
+}
+.app .container .output-container {
+  position: relative;
+  overflow: hidden;
+}
+.app .container .output-container span {
+  position: absolute;
+  font-size: 10px;
+  top: 40px;
+  right: 60px;
+  color: var(--output-color);
+}
+.app .container main {
+  display: grid;
+  grid-template-columns: repeat(4, calc((100% - 60px) / 4));
+  column-gap: 20px;
+  row-gap: 25px;
+  background-color: var(--keypad-background);
+  padding: 25px;
+  border-radius: 7px;
+}
+.app .container main button {
+  font-size: 32px;
+  font-weight: 700;
+  padding: 6px 0;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--light-grayish-orange-key-background);
+  box-shadow: 0 2px 0 0 var(--grayish-orange-key-shadow);
+  color: var(--very-dark-grayish-blue);
+  user-select: none;
+}
+.app .container main button:hover {
+  transform: scale(0.95);
+  background-color: var(--grayish-orange-key-shadow);
+}
+.app .container main button.reset,
+button.equal {
+  grid-column: span 2;
+}
+.app .container main button.reset,
+button.del {
+  font-size: 16px !important;
+  background-color: var(--key-background) !important;
+  box-shadow: 0 2px 0 0 var(--key-shadow) !important;
+  color: var(--white) !important;
+}
+.app .container main button.reset:hover {
+  background-color: var(--key-shadow) !important;
+}
+.app .container main button.del:hover {
+  background-color: var(--key-shadow) !important;
+}
+.container main button.equal {
+  background-color: var(--Red-key-background-toggle);
+  color: var(--white);
+  box-shadow: 0 2px 0 0 var(--dark-red-key-shadow);
+}
+.container main button.equal:hover {
+  background-color: var(--dark-red-key-shadow);
+}
+.attribution {
+    margin-top: 40px;
+    color: var(--very-dark-grayish-blue);
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--keypad-background);
+    padding: 30px 15px;
+} 
+.attribution a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--dark-red-key-shadow);
+}

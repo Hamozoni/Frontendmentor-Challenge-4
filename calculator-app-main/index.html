@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app" class="app">
+  <div class="container">
+      <header>
+        <h2 class="logo">calc</h2>
+        <div class="right-nav">
+          <h3>THEME</h3>
+          <ul id="themeUl">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </header>
+       <div class="output-container">
+          <div id="output" class="output">0</div>
+          <span></span>
+       </div>
+      <main>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="7">7</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="8">8</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="9">9</button>
+        <button  id="delBtn" class="del" >DEL</button> 
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="4">4</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="5">5</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="6">6</button>
+        <button onclick="operaterToggle(this.dataset.oerater)" id="plusBtn" data-oerater="+">+</button> 
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="1">1</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="2">2</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="3">3</button>
+        <button onclick="operaterToggle(this.dataset.oerater)" id="minusBtn"  data-oerater="-">-</button> 
+        <button onclick="getPreviuos(this.dataset.numb)" data-numb=".">.</button>
+        <button onclick="getPreviuos(this.dataset.numb)" class="num" data-numb="0">0</button>
+        <button onclick="operaterToggle(this.dataset.oerater)" id="devideBtn" data-oerater="/">/</button>
+        <button  onclick="operaterToggle(this.dataset.oerater)" id="timesBtn" data-oerater="×">×</button>
+        <button  id="resetBtn" class="reset">RESET</button>
+        <button id="equalBtn" class="equal" >=</button>
+      </main>
+  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Mohamed Yahia</a>.
+  </footer>
+</div>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
