@@ -282,5 +282,15 @@ document.addEventListener("keyup", (e) => {
 delBtn.onclick = del;
 
 resetBtn.onclick = function () {
-  location.reload();
+  calc.current = "";
+  calc.previuos = "";
+  calc.finalResult = "";
+  calc.oper ="";
+  calc.operaterMult = "";
+  calc.operaterTrigger = true;
+  calc.operater = true;
+  calc.operToEqual = true;
+  calc.operaterMultp = false;
+  ouput.innerHTML = 0;
+  ouputSpan.innerHTML = "";
 };
